@@ -1,0 +1,19 @@
+/*
+ * Created on Mon Dec 01 2020
+ *
+ * Copyright (c) 2020 Mohammad Golkar (@mgolkardev)
+ */
+
+export const GET_MOVIES_START = "GET_MOVIES_START";
+export const GET_MORE_MOVIES_START = "GET_MORE_MOVIES_START";
+export const GET_MOVIES_END = "GET_MOVIES_END";
+export const GET_MOVIES_ERROR = "GET_MOVIES_ERROR";
+export const GET_MORE_MOVIES_ERROR = "GET_MORE_MOVIES_ERROR";
+
+export const GET_LAST_MOVIES_START = "GET_LAST_MOVIES_START";
+export const GET_LAST_MOVIES_END = "GET_LAST_MOVIES_END";
+export const GET_LAST_MOVIES_ERROR = "GET_LAST_MOVIES_ERROR";
+
+export const GET_CATEGORIES_START = "GET_CATEGORIES_START";
+export const GET_CATEGORIES_END = "GET_CATEGORIES_END";
+export const GET_CATEGORIES_ERROR = "GET_CATEGORIES_ERROR";

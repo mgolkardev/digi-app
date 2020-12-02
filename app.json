@@ -1,0 +1,12 @@
+{
+  "name": "DigiKalaApp",
+  "displayName": "DigiKalaApp",
+  "expo": {
+    "name": "DigiKalaApp",
+    "slug": "DigiKalaApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
