@@ -1,4 +1,4 @@
 # digi-app
 
 download android app:
-http://mgolkar.com/app-release.apk
+http://mgolkar.com/apk.zip
