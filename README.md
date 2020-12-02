@@ -1,0 +1,3 @@
+# digi-app
+
+yarn android
