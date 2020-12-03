@@ -8,7 +8,7 @@ import { ListItem, Text } from "@ui-kitten/components";
 
 import { styles } from "./movie.tile.style";
 import { View, Image } from "react-native";
-import { TileProps } from "types/components/tile.types";
+import { TileProps } from "types/components/tile.type";
 
 export const MovieTile = ({ item, onItemClick, imageStyle }: TileProps) => {
   return (

@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2020 Mohammad Golkar (@mgolkardev)
  */
-import { IMovie } from "interfaces/movie/IMovie";
+import { IMovie } from "interfaces/movie/imovie.interface";
 
 export type MovieRenderItemProps = {
   item: IMovie;

@@ -8,7 +8,7 @@ import React from "react";
 import { View } from "react-native";
 import { Spinner } from "@ui-kitten/components";
 
-import { IndicatorProps } from "types/components/indicator.types";
+import { IndicatorProps } from "types/components/indicator.type";
 
 import { Styles } from "common/styles";
 

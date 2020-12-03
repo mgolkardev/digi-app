@@ -8,7 +8,7 @@ import {
   GET_CATEGORIES_END,
   GET_CATEGORIES_ERROR,
 } from "./movie.actions";
-import { ICategoryGetState, ICategoryResult } from "interfaces/movie/IMovieState";
+import { ICategoryGetState, ICategoryResult } from "interfaces/movie/imoviestate.interface";
 import * as api from "services/api.service";
 
 type ActionType = {

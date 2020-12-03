@@ -10,10 +10,10 @@ import {
   GET_MOVIES_ERROR,
   GET_MORE_MOVIES_ERROR,
 } from "./movie.actions";
-import { IMovieGetState, IMovieResult } from "interfaces/movie/IMovieState";
+import { IMovieGetState, IMovieResult } from "interfaces/movie/imoviestate.interface";
 import * as api from "services/api.service";
 import { getMoviePoster } from "utils";
-import { IMovie } from "interfaces/movie/IMovie";
+import { IMovie } from "interfaces/movie/imovie.interface";
 
 type ActionType = {
   type: string;

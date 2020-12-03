@@ -13,15 +13,16 @@ import {
 
 import { styles } from "./movie.style";
 import { useDispatch, useSelector } from "react-redux";
-import { IRootState } from "interfaces/IRootState";
+import { IRootState } from "interfaces/irootstate.interface";
 import { getMovies } from "reducers/movie/get.reducer";
 import { Search } from "components/search/search.component";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { MovieTile } from "components/tile/movie.tile.component";
 import { LoadingIndicator } from "components/indicator/indicator.component";
 import { Title } from "components/title/title.component";
-import { MovieScreenProps } from "types/screens/movie.types";
-import { MovieRenderItemProps } from "types/screens/renderitems/movieitem.types";
+import { MovieScreenProps } from "types/screens/movie.type";
+import { MovieRenderItemProps } from "types/screens/renderitems/movieitem.type";
+import { ResultZero } from "components/resultzero/resultzero.component";
 
 export const MovieScreen = ({
   route,
@@ -94,6 +95,8 @@ export const MovieScreen = ({
       );
     }
   };
+  
+  const noItemDisplay = () => <ResultZero />;
 
   const renderFooter = () =>
     movieReducer.get.data.next ? <LoadingIndicator /> : <></>;
@@ -133,6 +136,7 @@ export const MovieScreen = ({
           onEndReached={handleLoadMore}
           onEndReachedThreshold={0}
           ListFooterComponent={renderFooter}
+          ListEmptyComponent={noItemDisplay}
         />
       )}
     </SafeAreaView>

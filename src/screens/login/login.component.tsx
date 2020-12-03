@@ -15,8 +15,8 @@ import { Image, SafeAreaView, View } from "react-native";
 import { SplashScreen } from "screens/splash/splash.component";
 import { LoadingIndicator } from "components/indicator/indicator.component";
 
-import { IRootState } from "interfaces/IRootState";
-import { ILogin } from "interfaces/user/ILogin";
+import { IRootState } from "interfaces/irootstate.interface";
+import { ILogin } from "interfaces/user/ilogin.interface";
 
 import { styles } from "./login.style";
 import { ScrollView } from "react-native-gesture-handler";

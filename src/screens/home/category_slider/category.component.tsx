@@ -10,11 +10,11 @@ import _ from "lodash";
 
 import { styles } from "./category.style";
 import { useSelector } from "react-redux";
-import { IRootState } from "interfaces/IRootState";
+import { IRootState } from "interfaces/irootstate.interface";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LoadingIndicator } from "components/indicator/indicator.component";
-import { ICategory } from "interfaces/movie/ICategory";
-import { CategoryRenderItemProps } from "types/screens/renderitems/categoryitem.types";
+import { ICategory } from "interfaces/movie/icategory.interface";
+import { CategoryRenderItemProps } from "types/screens/renderitems/categoryitem.type";
 
 export const CategorySlider = ({ navigation }: any) => {
   const movieReducer = useSelector((state: IRootState) => {

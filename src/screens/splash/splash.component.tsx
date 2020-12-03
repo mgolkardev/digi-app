@@ -7,7 +7,7 @@ import React from "react";
 import { Image, SafeAreaView } from "react-native";
 import { Button, Layout, Text } from "@ui-kitten/components";
 
-import { SplashScreenProps } from "types/screens/splash.types";
+import { SplashScreenProps } from "types/screens/splash.type";
 
 import { Images } from "common/images";
 import { styles } from "./splash.style";

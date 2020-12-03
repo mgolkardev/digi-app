@@ -10,14 +10,14 @@ import _ from "lodash";
 
 import { styles } from "./slider.style";
 import { useSelector } from "react-redux";
-import { IRootState } from "interfaces/IRootState";
+import { IRootState } from "interfaces/irootstate.interface";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { MovieTile } from "components/tile/movie.tile.component";
 import { LoadingIndicator } from "components/indicator/indicator.component";
 import { Title } from "components/title/title.component";
-import { MovieSliderProps } from "types/screens/movieslider.types";
-import { MovieRenderItemProps } from "types/screens/renderitems/movieitem.types";
+import { MovieSliderProps } from "types/screens/movieslider.type";
+import { MovieRenderItemProps } from "types/screens/renderitems/movieitem.type";
 
 export const MovieSlider = ({ navigation, type }: MovieSliderProps) => {
   const movieReducer = useSelector((state: IRootState) => {

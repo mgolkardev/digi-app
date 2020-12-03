@@ -6,7 +6,7 @@
 import React from "react";
 import { Button, Icon, Layout, Text } from "@ui-kitten/components";
 
-import { TitleProps } from "types/components/title.types";
+import { TitleProps } from "types/components/title.type";
 
 import { styles } from "./title.style";
 

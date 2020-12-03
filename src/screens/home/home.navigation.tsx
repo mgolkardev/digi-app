@@ -18,7 +18,7 @@ import {
 import { styles } from "./home.style";
 import { SafeAreaView } from "react-native";
 import { useSelector } from "react-redux";
-import { IRootState } from "interfaces/IRootState";
+import { IRootState } from "interfaces/irootstate.interface";
 
 const HomeIcon = (props: any) => <Icon {...props} name="home-outline" />;
 

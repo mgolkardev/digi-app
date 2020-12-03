@@ -6,7 +6,7 @@
 import { AUTH_START, AUTH_END, AUTH_ERROR } from "./user.actions";
 import { IUserGetState, IUserResult } from "interfaces/user/IUserState";
 import * as api from "services/api.service";
-import { ILogin } from "interfaces/user/ILogin";
+import { ILogin } from "interfaces/user/ilogin.interface";
 
 type ActionType = {
   type: string;

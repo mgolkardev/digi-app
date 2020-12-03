@@ -1,5 +1,5 @@
-import { ICategory } from "./ICategory";
-import { IMovie } from "./IMovie";
+import { ICategory } from "./icategory.interface";
+import { IMovie } from "./imovie.interface";
 
 /*
  * Created on Mon Dec 01 2020

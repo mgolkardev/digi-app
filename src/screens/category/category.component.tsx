@@ -8,15 +8,16 @@ import { Layout, List } from "@ui-kitten/components";
 
 import { styles } from "./category.style";
 import { useSelector } from "react-redux";
-import { IRootState } from "interfaces/IRootState";
+import { IRootState } from "interfaces/irootstate.interface";
 import { Search } from "components/search/search.component";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LoadingIndicator } from "components/indicator/indicator.component";
 import { Title } from "components/title/title.component";
 import { MovieTile } from "components/tile/movie.tile.component";
 import { Images } from "common/images";
-import { ICategory } from "interfaces/movie/ICategory";
-import { CategoryRenderItemProps } from "types/screens/renderitems/categoryitem.types";
+import { ICategory } from "interfaces/movie/icategory.interface";
+import { CategoryRenderItemProps } from "types/screens/renderitems/categoryitem.type";
+import { ResultZero } from "components/resultzero/resultzero.component";
 
 export const CategoryScreen = ({ navigation }: any) => {
   const [searchValue, setSearchValue] = React.useState("");
@@ -27,6 +28,8 @@ export const CategoryScreen = ({ navigation }: any) => {
   const onCategory = (item: ICategory) => {
     navigation.navigate("movie", { tag: item.name });
   };
+
+  const noItemDisplay = () => <ResultZero />;
 
   const renderItem = ({ item }: CategoryRenderItemProps) => {
     return (
@@ -61,6 +64,7 @@ export const CategoryScreen = ({ navigation }: any) => {
             )}
             renderItem={renderItem}
             numColumns={3}
+            ListEmptyComponent={noItemDisplay}
           />
         )}
       </Layout>

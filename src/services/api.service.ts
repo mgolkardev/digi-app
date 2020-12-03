@@ -8,7 +8,7 @@ import axios from "axios";
 import NetInfo from "@react-native-community/netinfo";
 import * as AxiosLogger from "axios-logger";
 
-import {ILogin} from "interfaces/user/ILogin";
+import {ILogin} from "interfaces/user/ilogin.interface";
 import Toast from "react-native-toast-message";
 
 import { saveToken, readToken } from "utils";

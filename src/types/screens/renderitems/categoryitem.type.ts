@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2020 Mohammad Golkar (@mgolkardev)
  */
-import { ICategory } from "interfaces/movie/ICategory";
+import { ICategory } from "interfaces/movie/icategory.interface";
 
 export type CategoryRenderItemProps = {
   item: ICategory;

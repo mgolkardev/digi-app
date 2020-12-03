@@ -9,7 +9,7 @@ import { combineReducers } from "redux";
 import get from "./get.reducer";
 import last from "./last.reducer";
 import category from "./category.reducer";
-import { IMovieState } from "interfaces/movie/IMovieState";
+import { IMovieState } from "interfaces/movie/imoviestate.interface";
 
 const purchaseReducer = combineReducers<IMovieState>({
   get,
