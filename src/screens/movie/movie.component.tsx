@@ -95,7 +95,7 @@ export const MovieScreen = ({
       );
     }
   };
-  
+
   const noItemDisplay = () => <ResultZero />;
 
   const renderFooter = () =>
@@ -119,7 +119,7 @@ export const MovieScreen = ({
             setValue={setSearchValue}
           />
 
-          <Title caption={`All ${tag} movies`} style={styles.title} />
+          <Title caption={`All ${tag ?? ""} movies`} style={styles.title} />
         </>
       )}
 
