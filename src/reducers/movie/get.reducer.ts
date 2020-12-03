@@ -9,21 +9,19 @@ import {
   GET_MOVIES_END,
   GET_MOVIES_ERROR,
   GET_MORE_MOVIES_ERROR,
-  ADD_MOVIE_TO_GRID,
 } from "./movie.actions";
-import IMovie from "interfaces/movie/IMovie";
-import { IMovieGetState } from "interfaces/movie/IMovieState";
+import { IMovieGetState, IMovieResult } from "interfaces/movie/IMovieState";
 import * as api from "services/api.service";
 import { getMoviePoster } from "utils";
+import { IMovie } from "interfaces/movie/IMovie";
 
 type ActionType = {
   type: string;
-  data: any;
-  item: IMovie;
+  data: IMovieResult;
 };
 
 const initialState: IMovieGetState = {
-  data: { results: [] },
+  data: { count: 0, next: "", previous: "", results: [] },
   fetching: false,
   fetchingMore: false,
   done: false,
@@ -41,7 +39,7 @@ export default function (
         fetching: true,
         done: false,
         error: false,
-        data: { results: [] },
+        data: { count: 0, next: "", previous: "", results: [] },
       };
 
     case GET_MORE_MOVIES_START:
@@ -62,7 +60,7 @@ export default function (
           ...action.data,
           results: [
             ...state.data.results,
-            ...action.data.results.map((x: any) => {
+            ...action.data.results.map((x: IMovie) => {
               x.poster = getMoviePoster(x.id);
               return x;
             }),
@@ -86,12 +84,6 @@ export default function (
         error: false,
       };
 
-    case ADD_MOVIE_TO_GRID:
-      return {
-        ...state,
-        data: [...state.data, action.item],
-      };
-
     default:
       return state;
   }
@@ -109,8 +101,8 @@ export const getMovies = (
 
   api
     .getMovieAPI(tag.toLowerCase(), search.toLowerCase(), page)
-    .then((result: any) => result.data)
-    .then((data: any) => {
+    .then((result) => result.data)
+    .then((data: IMovieResult) => {
       distpach({
         type: GET_MOVIES_END,
         data,

@@ -10,21 +10,23 @@ import _ from "lodash";
 
 import { styles } from "./category.style";
 import { useSelector } from "react-redux";
-import IRootState from "interfaces/IRootState";
+import { IRootState } from "interfaces/IRootState";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LoadingIndicator } from "components/indicator/indicator.component";
+import { ICategory } from "interfaces/movie/ICategory";
+import { CategoryRenderItemProps } from "types/screens/renderitems/categoryitem.types";
 
 export const CategorySlider = ({ navigation }: any) => {
   const movieReducer = useSelector((state: IRootState) => {
     return state.movie;
   });
 
-  const onItemClick = (item: any) => {
+  const onItemClick = (item: ICategory) => {
     navigation.navigate("movie", { tag: item.name });
   };
 
-  const renderItem = ({ item, index }: any) => (
-    <ListItem key={`cat-item-${index}`}>
+  const renderItem = ({ item }: CategoryRenderItemProps) => (
+    <ListItem key={`cat-item-${item.id}`}>
       <Card
         style={styles.item}
         onPress={() => {

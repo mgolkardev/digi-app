@@ -13,15 +13,21 @@ import {
 
 import { styles } from "./movie.style";
 import { useDispatch, useSelector } from "react-redux";
-import IRootState from "interfaces/IRootState";
+import { IRootState } from "interfaces/IRootState";
 import { getMovies } from "reducers/movie/get.reducer";
 import { Search } from "components/search/search.component";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { MovieTile } from "components/tile/movie.tile.component";
 import { LoadingIndicator } from "components/indicator/indicator.component";
 import { Title } from "components/title/title.component";
+import { MovieScreenProps } from "types/screens/movie.types";
+import { MovieRenderItemProps } from "types/screens/renderitems/movieitem.types";
 
-export const MovieScreen = ({ route, navigation, search = "" }: any) => {
+export const MovieScreen = ({
+  route,
+  navigation,
+  search = "",
+}: MovieScreenProps) => {
   const tag = route?.params?.tag;
   const [searchValue, setSearchValue] = React.useState(search);
   const [isRefreshing, setIsRefreshing] = React.useState(false);
@@ -74,8 +80,8 @@ export const MovieScreen = ({ route, navigation, search = "" }: any) => {
     <TopNavigationAction onPress={navigateBack} icon={BackIcon} />
   );
 
-  const renderItem = ({ item, index }: any) => {
-    return <MovieTile item={item} key={`movie-item-${index}`} />;
+  const renderItem = ({ item }: MovieRenderItemProps) => {
+    return <MovieTile item={item} key={`movie-item-${item.id}`} />;
   };
 
   const handleLoadMore = () => {
@@ -110,7 +116,7 @@ export const MovieScreen = ({ route, navigation, search = "" }: any) => {
             setValue={setSearchValue}
           />
 
-          <Title caption={`All {tag} movies`} style={styles.title} />
+          <Title caption={`All ${tag} movies`} style={styles.title} />
         </>
       )}
 
@@ -118,9 +124,7 @@ export const MovieScreen = ({ route, navigation, search = "" }: any) => {
         <LoadingIndicator />
       ) : (
         <List
-          contentContainerStyle={{
-            paddingHorizontal: 10,
-          }}
+          style={styles.list}
           data={movieReducer.get.data.results}
           renderItem={renderItem}
           numColumns={3}

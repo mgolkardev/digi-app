@@ -7,10 +7,12 @@ import React from "react";
 import { Image, SafeAreaView } from "react-native";
 import { Button, Layout, Text } from "@ui-kitten/components";
 
+import { SplashScreenProps } from "types/screens/splash.types";
+
 import { Images } from "common/images";
 import { styles } from "./splash.style";
 
-export const SplashScreen = ({ onDismissClick }: any) => {
+export const SplashScreen = ({ onDismissClick }: SplashScreenProps) => {
   return (
     <SafeAreaView style={styles.container}>
       <Layout style={styles.form}>

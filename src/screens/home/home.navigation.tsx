@@ -18,7 +18,7 @@ import {
 import { styles } from "./home.style";
 import { SafeAreaView } from "react-native";
 import { useSelector } from "react-redux";
-import IRootState from "interfaces/IRootState";
+import { IRootState } from "interfaces/IRootState";
 
 const HomeIcon = (props: any) => <Icon {...props} name="home-outline" />;
 
@@ -59,7 +59,6 @@ export const HomeNavigator = () => {
         alignment="center"
       />
       <Navigator
-      sceneContainerStyle={{backgroundColor:"red"}}
         tabBar={(props) => (
           <BottomNavigation
             {...props}

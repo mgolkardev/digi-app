@@ -3,7 +3,6 @@
  *
  * Copyright (c) 2020 Mohammad Golkar (@mgolkardev)
  */
-export interface IUser {
-  token: number;
-  username: string;
-}
+export type IndicatorProps = {
+  style?: object;
+};

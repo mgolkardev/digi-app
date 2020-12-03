@@ -7,7 +7,7 @@
 import { combineReducers } from "redux";
 
 import auth from "./auth.reducer";
-import IUserState from "interfaces/user/IUserState";
+import { IUserState } from "interfaces/user/IUserState";
 
 const purchaseReducer = combineReducers<IUserState>({
   auth,

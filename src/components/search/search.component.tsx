@@ -8,8 +8,9 @@ import { Icon, Input } from "@ui-kitten/components";
 
 import { styles } from "./search.style";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import { SearchProps } from "types/components/search.types";
 
-export const Search = ({ placeholder, value, setValue }: any) => {
+export const Search = ({ placeholder, value, setValue }: SearchProps) => {
   const renderIcon = (props: any) =>
     value ? (
       <TouchableWithoutFeedback

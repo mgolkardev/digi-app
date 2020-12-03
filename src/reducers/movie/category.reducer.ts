@@ -8,18 +8,16 @@ import {
   GET_CATEGORIES_END,
   GET_CATEGORIES_ERROR,
 } from "./movie.actions";
-import ICategory from "interfaces/movie/ICategory";
-import { ICategoryGetState } from "interfaces/movie/IMovieState";
+import { ICategoryGetState, ICategoryResult } from "interfaces/movie/IMovieState";
 import * as api from "services/api.service";
 
 type ActionType = {
   type: string;
-  data: ICategory[];
-  item: ICategory;
+  data: ICategoryResult;
 };
 
 const initialState: ICategoryGetState = {
-  data: [],
+  data: { count: 0, next: "", previous: "", results: [] },
   fetching: false,
   done: false,
   error: false,
@@ -68,7 +66,7 @@ export const getCategories = (distpach: any) => {
   api
     .getCategoryAPI()
     .then((result) => result.data)
-    .then((data: any) => {
+    .then((data: ICategoryResult) => {
       distpach({
         type: GET_CATEGORIES_END,
         data,

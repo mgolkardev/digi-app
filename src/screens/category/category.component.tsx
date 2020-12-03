@@ -8,13 +8,15 @@ import { Layout, List } from "@ui-kitten/components";
 
 import { styles } from "./category.style";
 import { useSelector } from "react-redux";
-import IRootState from "interfaces/IRootState";
+import { IRootState } from "interfaces/IRootState";
 import { Search } from "components/search/search.component";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { LoadingIndicator } from "components/indicator/indicator.component";
 import { Title } from "components/title/title.component";
 import { MovieTile } from "components/tile/movie.tile.component";
 import { Images } from "common/images";
+import { ICategory } from "interfaces/movie/ICategory";
+import { CategoryRenderItemProps } from "types/screens/renderitems/categoryitem.types";
 
 export const CategoryScreen = ({ navigation }: any) => {
   const [searchValue, setSearchValue] = React.useState("");
@@ -22,11 +24,11 @@ export const CategoryScreen = ({ navigation }: any) => {
     return state.movie;
   });
 
-  const onCategory = (movie: any) => {
-    navigation.navigate("movie", { tag: movie.name });
+  const onCategory = (item: ICategory) => {
+    navigation.navigate("movie", { tag: item.name });
   };
 
-  const renderItem = ({ item }: any) => {
+  const renderItem = ({ item }: CategoryRenderItemProps) => {
     return (
       <MovieTile
         item={{
@@ -53,7 +55,8 @@ export const CategoryScreen = ({ navigation }: any) => {
           <LoadingIndicator />
         ) : (
           <List
-            data={movieReducer.category.data?.results?.filter((x: any) =>
+            style={styles.list}
+            data={movieReducer.category.data?.results?.filter((x: ICategory) =>
               x.name.toLowerCase().includes(searchValue.toLowerCase())
             )}
             renderItem={renderItem}

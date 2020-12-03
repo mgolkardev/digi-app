@@ -4,19 +4,17 @@
  * Copyright (c) 2020 Mohammad Golkar (@mgolkardev)
  */
 import { AUTH_START, AUTH_END, AUTH_ERROR } from "./user.actions";
-import IUser from "interfaces/user/IUser";
-import { IUserGetState } from "interfaces/user/IUserState";
+import { IUserGetState, IUserResult } from "interfaces/user/IUserState";
 import * as api from "services/api.service";
-import ILogin from "interfaces/user/ILogin";
+import { ILogin } from "interfaces/user/ILogin";
 
 type ActionType = {
   type: string;
-  data: IUser[];
-  item: IUser;
+  data: IUserResult;
 };
 
 const initialState: IUserGetState = {
-  data: [],
+  data: { token: "", username: "" },
   fetching: false,
   done: false,
   error: false,
@@ -64,7 +62,7 @@ export const auth = (user: ILogin, distpach: any) => {
 
   api
     .authAPI(user)
-    .then((data: any) => {
+    .then((data: IUserResult) => {
       distpach({
         type: AUTH_END,
         data: { ...data, ...user },

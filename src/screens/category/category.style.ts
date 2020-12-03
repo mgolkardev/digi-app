@@ -5,6 +5,7 @@
  */
 import { Dimensions, StyleSheet } from "react-native";
 import { Styles } from "common/styles";
+import { Colors } from "common/colors";
 
 const { width } = Dimensions.get("window");
 
@@ -21,5 +22,9 @@ export const styles = StyleSheet.create({
   },
   title: {
     paddingHorizontal: 10,
+    paddingBottom: 10,
+  },
+  list: {
+    backgroundColor: Colors.primary,
   },
 });

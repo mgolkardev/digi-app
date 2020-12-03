@@ -4,20 +4,22 @@
  * Copyright (c) 2020 Mohammad Golkar (@mgolkardev)
  */
 import React from "react";
-import { Button, Icon, Layout, List, Text } from "@ui-kitten/components";
+import { List } from "@ui-kitten/components";
 
 import _ from "lodash";
 
 import { styles } from "./slider.style";
 import { useSelector } from "react-redux";
-import IRootState from "interfaces/IRootState";
+import { IRootState } from "interfaces/IRootState";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { MovieTile } from "components/tile/movie.tile.component";
 import { LoadingIndicator } from "components/indicator/indicator.component";
 import { Title } from "components/title/title.component";
+import { MovieSliderProps } from "types/screens/movieslider.types";
+import { MovieRenderItemProps } from "types/screens/renderitems/movieitem.types";
 
-export const MovieSlider = ({ navigation, type }: any) => {
+export const MovieSlider = ({ navigation, type }: MovieSliderProps) => {
   const movieReducer = useSelector((state: IRootState) => {
     return state.movie;
   });
@@ -26,7 +28,7 @@ export const MovieSlider = ({ navigation, type }: any) => {
     navigation.navigate("movie");
   };
 
-  const renderItem = ({ item }: any) => {
+  const renderItem = ({ item }: MovieRenderItemProps) => {
     return <MovieTile item={item} key={`movie-item-${item.id}`} />;
   };
 

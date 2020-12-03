@@ -3,7 +3,9 @@
  *
  * Copyright (c) 2020 Mohammad Golkar (@mgolkardev)
  */
-export interface IUser {
-  token: number;
-  username: string;
-}
+
+export type MovieScreenProps = {
+  route?: any;
+  navigation?: any;
+  search?: string;
+};
